@@ -1,0 +1,80 @@
+body {
+    background: linear-gradient(120deg, #e0eafc, #cfdef3);
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container {
+    background: #fff;
+    padding: 2.5rem 2rem 2rem 2rem;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    max-width: 400px;
+    width: 100%;
+    margin: 2rem auto;
+}
+h1 {
+    text-align: center;
+    color: #2d3a4b;
+    margin-bottom: 1.5rem;
+}
+form label {
+    display: block;
+    margin-bottom: 0.3rem;
+    color: #3a4a5d;
+    font-weight: 500;
+}
+form select, form input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1.1rem;
+    border: 1px solid #bfc9d1;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f7fafc;
+    transition: border 0.2s;
+}
+form select:focus, form input[type="number"]:focus {
+    border: 1.5px solid #6c63ff;
+    outline: none;
+}
+input[type="submit"] {
+    width: 100%;
+    background: linear-gradient(90deg, #6c63ff, #48c6ef);
+    color: #fff;
+    border: none;
+    padding: 0.7rem;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    box-shadow: 0 2px 8px rgba(76, 110, 245, 0.08);
+}
+input[type="submit"]:hover {
+    background: linear-gradient(90deg, #48c6ef, #6c63ff);
+    transform: translateY(-2px) scale(1.02);
+}
+.result {
+    margin-top: 1.5rem;
+    padding: 1.2rem;
+    background: #e6f7ff;
+    border-left: 5px solid #6c63ff;
+    border-radius: 8px;
+    color: #2d3a4b;
+    font-size: 1.2rem;
+    text-align: center;
+    animation: fadeIn 0.7s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 500px) {
+    .container { padding: 1.2rem 0.5rem; }
+    h1 { font-size: 1.3rem; }
+} 
