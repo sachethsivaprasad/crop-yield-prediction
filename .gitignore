@@ -1,1 +1,24 @@
+# Virtual environment
+.venv/
+env/
+venv/
+# Byte-compiled files
+*.pyc
+__pycache__/
+# Distribution and packaging
+dist/
+build/
+*.egg-info/
+.eggs/
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+# Operating System files
+.DS_Store
+Thumbs.db
+# Sensitive data and configuration (example)
+local_settings.py
+*.env
 *.joblib
