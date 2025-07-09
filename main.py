@@ -1,9 +1,10 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, redirect, url_for, session
 import joblib
 import pandas as pd
 #changing file to see commit name
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key_here'  # Needed for session
 
 # Load the trained model
 model = joblib.load("knn.joblib")
@@ -44,10 +45,13 @@ def preprocess_input(data_dict):
                'Temperature_Celsius', 'Fertilizer_Used',
                'Irrigation_Used', 'Weather_Condition']]
 
-@app.route('/', methods=['GET', 'POST'])
-def predict():
+@app.route('/')
+def landing():
+    return render_template('landing.html')
+
+@app.route('/input', methods=['GET', 'POST'])
+def input_form():
     if request.method == 'POST':
-        # Get form data
         user_input = {
             'Region': request.form['Region'],
             'Soil_Type': request.form['Soil_Type'],
@@ -58,15 +62,19 @@ def predict():
             'Irrigation_Used': request.form['Irrigation_Used'],
             'Weather_Condition': request.form['Weather_Condition']
         }
-
-        # Preprocess and predict
         X = preprocess_input(user_input)
         scaled_pred = model.predict(X)[0]
         final_yield = scaler.inverse_transform([[0, 0, scaled_pred]])[0][2]
+        session['prediction'] = round(final_yield, 2)
+        session['input_data'] = user_input
+        return redirect(url_for('result'))
+    return render_template('input.html')
 
-        return render_template('index.html', prediction=round(final_yield, 2))
-
-    return render_template('index.html', prediction=None)
+@app.route('/result')
+def result():
+    prediction = session.get('prediction', None)
+    input_data = session.get('input_data', None)
+    return render_template('result.html', prediction=prediction, input_data=input_data)
 
 if __name__ == '__main__':
     app.run(debug=True)

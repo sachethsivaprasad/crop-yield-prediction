@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result - Crop Yield Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .input-summary {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .input-summary-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+        .input-summary-item img {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            margin-bottom: 0.3rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Prediction Result</h1>
+        {% if input_data %}
+        <div class="input-summary">
+            <div class="input-summary-item">
+                <img src="{{ url_for('static', filename='images/soil_' + input_data.Soil_Type|lower + '.png') }}" alt="Soil Type">
+                <span>{{ input_data.Soil_Type }}</span>
+            </div>
+            <div class="input-summary-item">
+                <img src="{{ url_for('static', filename='images/crop_' + input_data.Crop|lower + '.png') }}" alt="Crop">
+                <span>{{ input_data.Crop }}</span>
+            </div>
+            <div class="input-summary-item">
+                <img src="{{ url_for('static', filename='images/weather_' + input_data.Weather_Condition|lower + '.png') }}" alt="Weather">
+                <span>{{ input_data.Weather_Condition }}</span>
+            </div>
+        </div>
+        {% endif %}
+        <div class="result">
+            <strong>Predicted Yield:</strong> {{ prediction }} tons/hectare
+        </div>
+        <form action="{{ url_for('input_form') }}" method="get" style="margin-top:1.5rem;">
+            <button type="submit" style="width: 100%; background: linear-gradient(90deg, #6c63ff, #48c6ef); color: #fff; border: none; padding: 0.7rem; border-radius: 6px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.1s; box-shadow: 0 2px 8px rgba(76, 110, 245, 0.08);">New Prediction</button>
+        </form>
+    </div>
+</body>
+</html> 

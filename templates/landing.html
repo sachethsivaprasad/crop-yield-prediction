@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Crop Yield Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Crop Yield Predictor</h1>
+        <p>Predict crop yield based on your field and weather data.</p>
+        <form action="{{ url_for('input_form') }}" method="get" style="margin:0;">
+            <button type="submit" style="width: 100%; background: linear-gradient(90deg, #6c63ff, #48c6ef); color: #fff; border: none; padding: 0.7rem; border-radius: 6px; font-size: 1.1rem; font-weight: 600; cursor: pointer; transition: background 0.2s, transform 0.1s; box-shadow: 0 2px 8px rgba(76, 110, 245, 0.08);">Start Prediction</button>
+        </form>
+    </div>
+</body>
+</html> 

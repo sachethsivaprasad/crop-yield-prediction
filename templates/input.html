@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Data - Crop Yield Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        function validateForm() {
+            const rainfall = document.forms[0]["Rainfall_mm"].value;
+            const temp = document.forms[0]["Temperature_Celsius"].value;
+            if (rainfall === "" || isNaN(rainfall) || Number(rainfall) < 0) {
+                alert("Please enter a valid (non-negative) rainfall amount.");
+                return false;
+            }
+            if (temp === "" || isNaN(temp)) {
+                alert("Please enter a valid temperature.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Field and Weather Data</h1>
+        <form method="POST" onsubmit="return validateForm();">
+            <label>Region:</label>
+            <select name="Region">
+                <option>North</option>
+                <option>South</option>
+                <option>East</option>
+                <option>West</option>
+            </select>
+            <label>Soil Type:</label>
+            <select name="Soil_Type">
+                <option>Sandy</option>
+                <option>Clay</option>
+                <option>Loam</option>
+                <option>Silt</option>
+                <option>Peaty</option>
+                <option>Chalky</option>
+            </select>
+            <label>Crop:</label>
+            <select name="Crop">
+                <option>Cotton</option>
+                <option>Rice</option>
+                <option>Barley</option>
+                <option>Soybean</option>
+                <option>Wheat</option>
+                <option>Maize</option>
+            </select>
+            <label>Rainfall (mm):</label>
+            <input type="number" name="Rainfall_mm" step="any" min="0" required>
+            <label>Temperature (°C):</label>
+            <input type="number" name="Temperature_Celsius" step="any" required>
+            <label>Fertilizer Used:</label>
+            <select name="Fertilizer_Used">
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+            <label>Irrigation Used:</label>
+            <select name="Irrigation_Used">
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+            <label>Weather Condition:</label>
+            <select name="Weather_Condition">
+                <option>Sunny</option>
+                <option>Rainy</option>
+                <option>Cloudy</option>
+            </select>
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</body>
+</html> 
