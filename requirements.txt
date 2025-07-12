@@ -1,4 +1,5 @@
 Flask
+gunicorn
 pandas
 joblib
 huggingface_hub
