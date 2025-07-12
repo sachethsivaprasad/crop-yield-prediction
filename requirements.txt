@@ -1,7 +1,7 @@
 Flask
 gunicorn
-sklearn
+scikit-learn
 pandas
 joblib
 huggingface_hub
-python-dotenv 
+python-dotenv
