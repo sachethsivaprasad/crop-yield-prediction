@@ -88,12 +88,12 @@ input[type="submit"]:hover {
     h1 { font-size: 1.3rem; }
 } 
 .input-summary-item img {
-    width: 72px;
-    height: 72px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem;
     border-radius: 50%;
-    border: 2px solid #e0eafc;
+    border: 3px solid #e0eafc;
     background: #f7fafc;
-    box-shadow: 0 2px 8px rgba(76, 110, 245, 0.08);
+    box-shadow: 0 4px 12px rgba(76, 110, 245, 0.15);
 } 
