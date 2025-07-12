@@ -10,12 +10,21 @@ body {
 }
 .container {
     background: #fff;
-    padding: 2.5rem 2rem 2rem 2rem;
+    padding: 3.5rem 3rem 3rem 3rem;
     border-radius: 18px;
     box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-    max-width: 400px;
-    width: 100%;
+    max-width: 700px;
+    width: 90%;
+    margin: 3rem auto;
+}
+.card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+    padding: 2.5rem 2rem 2rem 2rem;
     margin: 2rem auto;
+    max-width: 700px;
+    width: 90%;
 }
 h1 {
     text-align: center;
@@ -77,4 +86,14 @@ input[type="submit"]:hover {
 @media (max-width: 500px) {
     .container { padding: 1.2rem 0.5rem; }
     h1 { font-size: 1.3rem; }
+} 
+.input-summary-item img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    margin-bottom: 0.3rem;
+    border-radius: 50%;
+    border: 2px solid #e0eafc;
+    background: #f7fafc;
+    box-shadow: 0 2px 8px rgba(76, 110, 245, 0.08);
 } 
