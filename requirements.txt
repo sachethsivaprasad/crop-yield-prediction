@@ -1,0 +1,5 @@
+Flask
+pandas
+joblib
+huggingface_hub
+python-dotenv 
