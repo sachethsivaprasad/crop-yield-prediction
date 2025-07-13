@@ -76,3 +76,4 @@ The web app takes the following input fields:
 
 * Dataset: [Kaggle - Agriculture Crop Yield Dataset](https://www.kaggle.com/datasets/samuelotiattakorah/agriculture-crop-yield)
 * Model Hosting: [Hugging Face](https://huggingface.co/skcept/crop-yield-prediction)
+* Website Hosting: [Rener](https://crop-yield-prediction-063b.onrender.com)
