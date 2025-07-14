@@ -6,9 +6,17 @@ This project predicts crop yield (in tons per hectare) based on environmental an
 
 This project focuses on predicting agricultural crop yield based on key environmental and cultivation parameters using machine learning techniques. The workflow began with Exploratory Data Analysis (EDA) to understand the relationships among variables such as region, soil type, crop type, rainfall, temperature, fertiliser and irrigation usage, and weather conditions.
 
-Subsequent data preprocessing involved encoding categorical features, scaling numerical values, and transforming binary inputs to prepare the dataset for modelling. We experimented with multiple regression models, including Linear Regression, K-Nearest Neighbours (KNN) Regression, etc. to identify the best performing algorithm for yield prediction.
+Subsequent data preprocessing involved encoding categorical features, scaling numerical values, and transforming binary inputs to prepare the dataset for modelling. We experimented with multiple regression models, including Linear Regression, K-Nearest Neighbours (KNN) Regression, etc., to identify the best-performing algorithm for yield prediction.
 
 After evaluating the models using metrics such as Mean Squared Error (MSE), Mean Absolute Error (MAE), and R² score, the final trained model was saved using joblib. A user-friendly web interface was developed using Python Flask, allowing users to input agricultural parameters and receive yield predictions. The complete application was successfully deployed to a cloud platform, making the predictive system accessible via a web browser.
+
+## Quick Access Links
+
+* Dataset: [Kaggle - Agriculture Crop Yield Dataset](https://www.kaggle.com/datasets/samuelotiattakorah/agriculture-crop-yield)
+* Google Colab Notebook: [EDA and ML Model](https://colab.research.google.com/drive/1gK2qG30H0BKwfNKX7yXnu5DDnJjMKRM8?usp=sharing)
+* Model Hosting: [Hugging Face](https://huggingface.co/skcept/crop-yield-prediction)
+* Website Hosting: [Render](https://crop-yield-prediction-063b.onrender.com)
+
 
 ## Technologies Used
 
@@ -71,9 +79,3 @@ The web app takes the following input fields:
 * Fertiliser Used (Yes/No)
 * Irrigation Used (Yes/No)
 * Weather Condition (Sunny, Rainy, Cloudy)
-
-## Acknowledgments
-
-* Dataset: [Kaggle - Agriculture Crop Yield Dataset](https://www.kaggle.com/datasets/samuelotiattakorah/agriculture-crop-yield)
-* Model Hosting: [Hugging Face](https://huggingface.co/skcept/crop-yield-prediction)
-* Website Hosting: [Render](https://crop-yield-prediction-063b.onrender.com)
